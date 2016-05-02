@@ -24,6 +24,29 @@
 	height:25px;
 }
 
+.register-div
+{
+	background-color:#FFFFFF;
+	padding:10px;
+}
+
+.register-form
+{
+	margin-top:25px;
+}
+
+.register-title
+{
+	text-align:left;
+}
+
+.register-but
+{
+	margin:auto;
+	text-align:center;
+	margin-top:25px;
+}
+
 /* HEADER */
 
 .header-top

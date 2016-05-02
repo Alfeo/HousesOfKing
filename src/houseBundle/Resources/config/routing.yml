@@ -1,0 +1,3 @@
+user_dashboard:
+    path:     /user/dashboard
+    defaults: { _controller: houseBundle:Default:index }

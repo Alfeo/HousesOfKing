@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    
+	<div class="col-md-4 faction-div">
+		<img class="parch" src="{{ asset('img/parchemin.jpg') }}">
+		<div class="faction-img col-md-6 col-md-offset-3">
+			<img src="{{ asset('img/thorkel_flag.png') }}">
+		</div>
+		<div class="col-md-12 faction-desc">
+			<p></p>
+		</div>
+		<div class="col-md-12 faction-access">
+			<a class="btn btn-success" href="{{ path('user_choice_house_confirmed', {'id': 1}) }}">Rejoindre</a>
+		</div>
+	</div>
+
+	<div class="col-md-4 faction-div">
+		<img class="parch" src="{{ asset('img/parchemin.jpg') }}">
+		<div class="faction-img col-md-6 col-md-offset-3">
+			<img src="{{ asset('img/exorine_flag.png') }}">
+		</div>
+		<div class="col-md-12 faction-desc">
+			<p></p>
+		</div>
+		<div class="col-md-12 faction-access">
+			<a class="btn btn-success" href="{{ path('user_choice_house_confirmed', {'id': 2}) }}">Rejoindre</a>
+		</div>
+	</div>
+
+	<div class="col-md-4 faction-div">
+		<img class="parch" src="{{ asset('img/parchemin.jpg') }}">
+		<div class="faction-img col-md-6 col-md-offset-3">
+			<img src="{{ asset('img/rizzen_flag.png') }}">
+		</div>
+		<div class="col-md-12 faction-desc">
+			<p></p>
+		</div>
+		<div class="col-md-12 faction-access">
+			<a class="btn btn-success" href="{{ path('user_choice_house_confirmed', {'id': 3}) }}">Rejoindre</a>
+		</div>
+	</div>
+
+{% endblock %}

@@ -144,12 +144,15 @@
 	min-height:400px;
 	position:relative;
 	padding-top:30px;
+	text-align:center;
 }
 
 .faction-img img
 {
-	width:100%;
+	width:130px;
 	height:auto;
+	text-align:center;
+	margin:auto;
 }
 
 .faction-div .parch
@@ -168,7 +171,8 @@
 
 .faction-desc
 {
-	height:150px;
+	min-height:170px;
+	text-align:center;
 }
 
 /* FOOTER */

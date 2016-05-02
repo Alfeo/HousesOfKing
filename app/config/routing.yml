@@ -27,6 +27,9 @@ user_choice_house:
     defaults: { _controller: AppBundle:Registration:choice }
 
 user_choice_house_confirmed:
-    path:     /user/register/houses/select/{id}
+    path:     /user/register/houses/select/{house}
     defaults: { _controller: AppBundle:Registration:choiceconfirmed }
 
+user_confirmed:
+    path:     /user/confirmed
+    defaults: { _controller: AppBundle:Registration:confirmed }

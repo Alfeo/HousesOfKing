@@ -3,41 +3,44 @@
 {% block body %}
     
 	<div class="col-md-4 faction-div">
-		<img class="parch" src="{{ asset('img/parchemin.jpg') }}">
-		<div class="faction-img col-md-6 col-md-offset-3">
+		<img class="parch" src="{{ asset('img/parchemin.png') }}">
+		<div class="faction-img col-md-6 col-md-offset-3 col-xs-6 col-xs-offset-3">
 			<img src="{{ asset('img/thorkel_flag.png') }}">
 		</div>
-		<div class="col-md-12 faction-desc">
-			<p></p>
+		<div class="col-md-12 col-xs-12 faction-desc">
+			<h3>Maison Thorkel</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</p>
 		</div>
-		<div class="col-md-12 faction-access">
-			<a class="btn btn-success" href="{{ path('user_choice_house_confirmed', {'id': 1}) }}">Rejoindre</a>
+		<div class="col-md-12 col-xs-12 faction-access">
+			<a class="btn btn-success" href="{{ path('user_choice_house_confirmed', {'house': 'Thorkel'}) }}">Rejoindre</a>
 		</div>
 	</div>
 
 	<div class="col-md-4 faction-div">
-		<img class="parch" src="{{ asset('img/parchemin.jpg') }}">
-		<div class="faction-img col-md-6 col-md-offset-3">
+		<img class="parch" src="{{ asset('img/parchemin.png') }}">
+		<div class="faction-img col-md-6 col-md-offset-3 col-xs-6 col-xs-offset-3">
 			<img src="{{ asset('img/exorine_flag.png') }}">
 		</div>
-		<div class="col-md-12 faction-desc">
-			<p></p>
+		<div class="col-md-12 col-xs-12 faction-desc">
+			<h3>Maison Exorine</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</p>
 		</div>
-		<div class="col-md-12 faction-access">
-			<a class="btn btn-success" href="{{ path('user_choice_house_confirmed', {'id': 2}) }}">Rejoindre</a>
+		<div class="col-md-12 col-xs-12 faction-access">
+			<a class="btn btn-success" href="{{ path('user_choice_house_confirmed', {'house': 'Exorine'}) }}">Rejoindre</a>
 		</div>
 	</div>
 
 	<div class="col-md-4 faction-div">
-		<img class="parch" src="{{ asset('img/parchemin.jpg') }}">
-		<div class="faction-img col-md-6 col-md-offset-3">
+		<img class="parch" src="{{ asset('img/parchemin.png') }}">
+		<div class="faction-img col-md-6 col-md-offset-3 col-xs-6 col-xs-offset-3">
 			<img src="{{ asset('img/rizzen_flag.png') }}">
 		</div>
-		<div class="col-md-12 faction-desc">
-			<p></p>
+		<div class="col-md-12 col-xs-12 faction-desc">
+			<h3>Maison Rizzen</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</p>
 		</div>
-		<div class="col-md-12 faction-access">
-			<a class="btn btn-success" href="{{ path('user_choice_house_confirmed', {'id': 3}) }}">Rejoindre</a>
+		<div class="col-md-12 col-xs-12 faction-access">
+			<a class="btn btn-success" href="{{ path('user_choice_house_confirmed', {'house': 'Rizzen'}) }}">Rejoindre</a>
 		</div>
 	</div>
 

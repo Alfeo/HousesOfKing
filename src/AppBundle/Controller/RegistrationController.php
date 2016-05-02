@@ -120,7 +120,7 @@ class RegistrationController extends Controller
         $userManager->updateUser($user);
 
         if (null === $response = $event->getResponse()) {
-            $url = $this->generateUrl('fos_user_registration_confirmed');
+            $url = $this->generateUrl('user_confirmed');
             $response = new RedirectResponse($url);
         }
 
@@ -167,15 +167,16 @@ class RegistrationController extends Controller
         ));
     }
 
-    public function choiceconfirmedAction(Request $request)
+    public function choiceconfirmedAction(Request $request, $house)
     {
         $em = $this->getDoctrine()->getManager();
 
         $user = $this->getUser();
-        $house = $request->query->get('house');
+
+        $thisHouse = $em->getRepository('houseBundle:House')->findOneByName($house);
 
         $faction = new Datauser();
-        $faction->setHouse($house);
+        $faction->setHouse($thisHouse->getId());
         $faction->setLife(100);
         $faction->setExperience(0);
         $faction->setStrenght(0);
@@ -184,7 +185,7 @@ class RegistrationController extends Controller
         $em->persist($faction);
         $em->flush();
 
-        $url = $this->generateUrl('fos_user_registration_confirmed');
+        $url = $this->generateUrl('user_confirmed');
         $response = new RedirectResponse($url);
 
         return $response;

@@ -22,6 +22,13 @@ class House
     private $id;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", nullable=true)
+     */
+    private $name;
+
+    /**
      * @var int
      *
      * @ORM\Column(name="gold", type="integer", nullable=true)
@@ -42,6 +49,28 @@ class House
      */
     private $lord;
 
+    /**
+     * get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     * @return House
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
 
     /**
      * Get id

@@ -70,8 +70,25 @@
 
 .nav-left
 {
-	background-color:#61210B;
+	background-color:black;
 	height:500px;
+	padding:10px;
+}
+
+.nav-text, .nav-text-alt
+{
+	background-color:#2A120A;
+	margin-top:10px;
+}
+
+.nav-text a
+{
+	color:#DBA901;
+}
+
+.nav-text-alt a
+{
+	color:#FF4000;
 }
 
 .main-perso
@@ -120,9 +137,21 @@
 	padding:10px;
 }
 
+.main-perso-inventaire-text
+{
+	height:50px;
+}
+
 .main-perso-inventaire-text h2
 {
 	color:#FFFFFF;
+	font-size:2em;
+}
+
+.main-perso-inventaire-text h2 img
+{
+	height:30px;
+	width:30px;
 }
 
 .main-perso-inventaire
@@ -180,7 +209,7 @@
 .top-footer
 {
 	height:10px;
-	background-color:#DF7401;
+	background-color:#DBA901;
 }
 
 .main-footer

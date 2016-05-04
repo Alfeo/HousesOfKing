@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>Houses Of King</title>
         <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.css') }}" >
         <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
         <script type="text/javascript" src="{{ asset('js/jquery.js') }}" ></script>
@@ -63,7 +63,51 @@
             </nav>
         </div>
 
-        <div class="col-md-10 col-md-offset-1">
+        <div class="col-md-2 col-md-offset-1 nav-left">
+          <img class="illustration-var" src="{{ asset('img/navleft.jpg') }}">
+          <div class="col-md-12 nav-text">
+            <a href="#">Carte du Royaume</a>
+          </div>
+          <div class="col-md-12 nav-text">
+            <a href="#">Expédition</a>
+          </div>
+
+          <div class="col-md-12">
+            <hr>
+          </div>
+
+          <div class="col-md-12 nav-text">
+            <a href="#">Boutique locale</a>
+          </div>
+          <div class="col-md-12 nav-text">
+            <a href="#">Commerce</a>
+          </div>
+
+          <div class="col-md-12">
+            <hr>
+          </div>
+
+          <div class="col-md-12 nav-text">
+            <a href="#">Ma Faction</a>
+          </div>
+          <div class="col-md-12 nav-text">
+            <a href="#">Alliance</a>
+          </div>
+
+          <div class="col-md-12">
+            <hr>
+          </div>
+
+          <div class="col-md-12 nav-text-alt">
+            <a href="#">Gestion du Royaume</a>
+          </div>
+          <div class="col-md-12 nav-text-alt">
+            <a href="#">Gestion de la Maison</a>
+          </div>
+          
+        </div>
+
+        <div class="col-md-8">
           {% block body %}{% endblock %}
         </div>
 

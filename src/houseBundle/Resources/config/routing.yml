@@ -1,3 +1,3 @@
 user_dashboard:
-    path:     /user/dashboard
-    defaults: { _controller: houseBundle:Default:index }
+    path:     /user/character
+    defaults: { _controller: houseBundle:Default:character }

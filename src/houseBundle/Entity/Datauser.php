@@ -45,6 +45,13 @@ class Datauser
     /**
      * @var int
      *
+     * @ORM\Column(name="defense", type="integer", nullable=true)
+     */
+    private $defense;
+
+    /**
+     * @var int
+     *
      * @ORM\Column(name="life", type="integer", nullable=true)
      */
     private $life;
@@ -118,6 +125,29 @@ class Datauser
     public function getStuff()
     {
         return $this->stuff;
+    }
+
+    /**
+     * Set defense
+     *
+     * @param integer $defense
+     * @return Datauser
+     */
+    public function setDefense($defense)
+    {
+        $this->defense = $defense;
+
+        return $this;
+    }
+
+    /**
+     * Get defense
+     *
+     * @return integer 
+     */
+    public function getDefense()
+    {
+        return $this->defense;
     }
 
     /**

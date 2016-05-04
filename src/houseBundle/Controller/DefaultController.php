@@ -49,7 +49,22 @@ class DefaultController extends Controller
     	$em->flush();
 
         return $this->render('houseBundle:frontend:map.html.twig', array(
-        	'joueur' => $statistiques,
+        	'joueur' => $statistiques
+        ));
+    }
+
+    public function localeMapAction()
+    {
+    	$em = $this->getDoctrine()->getManager();
+
+    	$user = $this->container->get('security.context')->getToken()->getUser();
+
+    	$currentPos = $em->getRepository('houseBundle:Datauser')->findOneById($user->getId());
+    	$allUserLocale = $em->getRepository('houseBundle:Datauser')->findByLocate($currentPos->getLocate());
+
+        return $this->render('houseBundle:frontend:maplocale.html.twig', array(
+        	'joueur' => $currentPos,
+        	'others' => $allUserLocale
         ));
     }
 }

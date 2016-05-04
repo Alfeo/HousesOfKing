@@ -214,6 +214,32 @@
 .map-right
 {
 	height:470px;
+	padding-top:10px;
+}
+
+.map-locale-main
+{
+	height:450px;
+	background-color:#2A120A;
+	padding:10px;
+	overflow-y:scroll;
+}
+
+.map-locale-player
+{
+	min-height:100px;
+	padding:20px;
+}
+
+.map-locale-player-text
+{
+	padding-top:10px;
+}
+
+.map-locale-player-acatar
+{
+	height:60px;
+	border:solid black 1px;
 }
 
 .map-main

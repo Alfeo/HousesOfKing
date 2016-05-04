@@ -9,3 +9,7 @@ user_map:
 user_change_map:
     path:     /change/map/{map}
     defaults: { _controller: houseBundle:Default:changeMap }
+
+user_locale_map:
+    path:     /locale/map
+    defaults: { _controller: houseBundle:Default:localeMap }

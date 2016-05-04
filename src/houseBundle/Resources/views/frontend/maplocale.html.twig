@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+	<div class="col-md-12 map-main">
+		<div class="col-md-12 map-locale-main">
+			{% for other in others %}
+				<div class="col-md-12 col-xs-12 map-locale-player">
+					<img class="illustration-var" src="{{ asset('img/parchemin.png') }}">
+					<div class="col-md-offset-1 col-md-1 col-xs-offset-1 col-xs-2 map-locale-player-acatar">
+						<img class="illustration-var" src="{{ asset('img/default.png') }}">
+					</div>
+					<div class="col-md-10 col-xs-7 map-locale-player-text">
+						<div class="col-md-4 col-xs-8">
+							<h4>PSEUDO</h4>
+						</div>
+						<div class="col-md-4 col-xs-4">
+							{% if other.house == 1 %}
+								<h4>Maison Thorkel</h4>
+							{% elseif other.house == 2 %}
+								<h4>Maison Exorine</h4>
+							{% elseif other.house == 3 %}
+								<h4>Maison Rizzen</h4>
+							{% endif %}
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+
+
+{% endblock %}

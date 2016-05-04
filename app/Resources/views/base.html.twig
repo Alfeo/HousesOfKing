@@ -65,48 +65,51 @@
 
         <div class="col-md-2 col-md-offset-1 nav-left">
           <img class="illustration-var" src="{{ asset('img/navleft.jpg') }}">
-          <div class="col-md-12 nav-text">
-            <a href="#">Carte du Royaume</a>
-          </div>
-          <div class="col-md-12 nav-text">
-            <a href="#">Expédition</a>
-          </div>
+          {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+            <div class="col-md-12 nav-text">
+              <a href="#">Carte du Royaume</a>
+            </div>
+            <div class="col-md-12 nav-text">
+              <a href="#">Expédition</a>
+            </div>
 
-          <div class="col-md-12">
-            <hr>
-          </div>
+            <div class="col-md-12">
+              <hr>
+            </div>
 
-          <div class="col-md-12 nav-text">
-            <a href="#">Atelier</a>
-          </div>
-          <div class="col-md-12 nav-text">
-            <a href="#">Boutique locale</a>
-          </div>
-          <div class="col-md-12 nav-text">
-            <a href="#">Commerce</a>
-          </div>
+            <div class="col-md-12 nav-text">
+              <a href="#">Atelier</a>
+            </div>
+            <div class="col-md-12 nav-text">
+              <a href="#">Boutique locale</a>
+            </div>
+            <div class="col-md-12 nav-text">
+              <a href="#">Commerce</a>
+            </div>
 
-          <div class="col-md-12">
-            <hr>
-          </div>
+            <div class="col-md-12">
+              <hr>
+            </div>
 
-          <div class="col-md-12 nav-text">
-            <a href="#">Ma Faction</a>
-          </div>
-          <div class="col-md-12 nav-text">
-            <a href="#">Alliance</a>
-          </div>
+            <div class="col-md-12 nav-text">
+              <a href="#">Ma Faction</a>
+            </div>
+            <div class="col-md-12 nav-text">
+              <a href="#">Alliance</a>
+            </div>
 
-          <div class="col-md-12">
-            <hr>
-          </div>
+            <div class="col-md-12">
+              <hr>
+            </div>
 
-          <div class="col-md-12 nav-text-alt">
-            <a href="#">Gestion du Royaume</a>
-          </div>
-          <div class="col-md-12 nav-text-alt">
-            <a href="#">Gestion de la Maison</a>
-          </div>
+            <div class="col-md-12 nav-text-alt">
+              <a href="#">Gestion du Royaume</a>
+            </div>
+            <div class="col-md-12 nav-text-alt">
+              <a href="#">Gestion de la Maison</a>
+            </div>
+          {% else %}
+          {% endif %}
           
         </div>
 

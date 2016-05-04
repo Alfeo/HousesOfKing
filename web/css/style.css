@@ -26,8 +26,8 @@
 
 .register-div
 {
-	background-color:#FFFFFF;
-	padding:10px;
+	min-height:500px;
+	padding:50px;
 }
 
 .register-form
@@ -37,13 +37,11 @@
 
 .register-title
 {
-	text-align:left;
+	text-align:center;
 }
 
 .register-but
 {
-	margin:auto;
-	text-align:center;
 	margin-top:25px;
 }
 
@@ -91,6 +89,11 @@
 	color:#FF4000;
 }
 
+.main-accueil
+{
+	height:500px;
+}
+
 .main-perso
 {
 	min-height:570px;
@@ -111,8 +114,6 @@
 {
 	margin-top:50px;
 	height:300px;
-	border:solid black 1px;
-	background-color:#DF7401;
 	text-align:center;
 }
 

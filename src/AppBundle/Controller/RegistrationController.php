@@ -176,7 +176,7 @@ class RegistrationController extends Controller
         $thisHouse = $em->getRepository('houseBundle:House')->findOneByName($house);
 
         $faction = new Datauser();
-        $faction->setHouse($thisHouse->getId());
+        $faction->setHouse($thisHouse->getRefhouse());
         $faction->setLife(100);
         $faction->setExperience(0);
         $faction->setStrenght(0);

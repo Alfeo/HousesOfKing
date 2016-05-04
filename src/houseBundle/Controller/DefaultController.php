@@ -8,6 +8,14 @@ class DefaultController extends Controller
 {
     public function characterAction()
     {
-        return $this->render('houseBundle:frontend:character.html.twig');
+    	$em = $this->getDoctrine()->getManager();
+
+    	$user = $this->container->get('security.context')->getToken()->getUser();
+
+    	$statistiques = $em->getRepository('houseBundle:Datauser')->findOneById($user->getId());
+
+        return $this->render('houseBundle:frontend:character.html.twig', array(
+        	'joueur' => $statistiques,
+        ));
     }
 }

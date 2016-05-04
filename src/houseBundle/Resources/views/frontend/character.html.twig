@@ -16,15 +16,15 @@
 					<h3>Charactéristiques</h3>
 					<div class="col-md-12 main-perso-states-div">
 						<p>Niveau 1</p>
-						<p>Points d'honneur :</p>
-						<p>Expérience :</p>
+						<p>Points d'honneur : </p>
+						<p>Expérience : {{ joueur.experience }}</p>
 						<div class="progress">
-						  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-						    60%
+						  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{ joueur.experience }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ joueur.experience }}%;">
+						    {{ joueur.experience }}%
 						  </div>
 						</div>
-						<p>Force :</p>
-						<p>Défense :</p>
+						<p>Force : {{ joueur.strenght }}</p>
+						<p>Défense : {{ joueur.defense }}</p>
 					</div>
 				</div>
 			</div>
@@ -32,7 +32,15 @@
 
 		<div class="col-md-7 main-perso-visual">
 			<img class="illustration-var" src="{{ asset('img/wood.jpg') }}">
-			<img class="perso" src="{{ asset('img/perso.png') }}">
+			{% if joueur.house == 1 %}
+				<img class="perso" src="{{ asset('img/persoh1.png') }}">
+			{% elseif joueur.house == 2 %}
+				<img class="perso" src="{{ asset('img/persoh2.png') }}">
+			{% elseif joueur.house == 3 %}
+				<img class="perso" src="{{ asset('img/persoh3.png') }}">
+			{% else %}
+				<img class="perso" src="{{ asset('img/perso.png') }}">
+			{% endif %}
 			<div class="col-md-3 col-md-offset-9 col-xs-3 col-xs-offset-9">
 				<div class="equip-item col-md-12">
 					Heaume
@@ -58,7 +66,7 @@
 
 	<div class="col-md-12 main-perso-inventaire-text">
 		<h2 class="pull-left">Inventaire (0 / 30)</h2>
-		<h2 class="pull-right">Argent : 0 
+		<h2 class="pull-right">Argent : {{ joueur.gold }} 
 			<img src="{{ asset('img/bourse.png') }}">
 		</h2>
 	</div>

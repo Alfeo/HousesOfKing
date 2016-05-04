@@ -31,6 +31,13 @@ class House
     /**
      * @var int
      *
+     * @ORM\Column(name="refhouse", type="integer", nullable=true)
+     */
+    private $refhouse;
+
+    /**
+     * @var int
+     *
      * @ORM\Column(name="gold", type="integer", nullable=true)
      */
     private $gold;
@@ -80,6 +87,29 @@ class House
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set refhouse
+     *
+     * @param integer $refhouse
+     * @return House
+     */
+    public function setRefhouse($refhouse)
+    {
+        $this->refhouse = $refhouse;
+
+        return $this;
+    }
+
+    /**
+     * Get refhouse
+     *
+     * @return integer 
+     */
+    public function getRefhouse()
+    {
+        return $this->refhouse;
     }
 
     /**

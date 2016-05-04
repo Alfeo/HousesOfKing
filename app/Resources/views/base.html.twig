@@ -67,10 +67,10 @@
           <img class="illustration-var" src="{{ asset('img/navleft.jpg') }}">
           {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
             <div class="col-md-12 nav-text">
-              <a href="#">Carte du Royaume</a>
+              <a href="{{ path('user_map') }}">Carte du Royaume</a>
             </div>
             <div class="col-md-12 nav-text">
-              <a href="#">Expédition</a>
+              <a href="">Carte Locale</a>
             </div>
 
             <div class="col-md-12">

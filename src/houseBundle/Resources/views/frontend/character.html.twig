@@ -2,13 +2,19 @@
 
 {% block body %}
 
-	<div class="col-md-12 main-perso">
+	<div class="col-md-12 main">
 
 		<img class="illustration-var" src="{{ asset('img/texture.jpg') }}">
 
 		<div class="col-md-5 main-perso-left">
 			<div class="col-md-12 row main-perso-locate">
-				<img class="illustration-var" src="{{ asset('img/map.jpg') }}">
+				{% if joueur.locate == 1 %}
+					<img class="illustration-var" src="{{ asset('img/map1.png') }}">
+				{% elseif joueur.locate == 2 %}
+					<img class="illustration-var" src="{{ asset('img/map2.png') }}">
+				{% elseif joueur.locate == 3 %}
+					<img class="illustration-var" src="{{ asset('img/map3.png') }}">
+				{% endif %}
 			</div>
 			<div class="col-md-12 row main-perso-states">
 				<img class="illustration-var" src="{{ asset('img/parchemin.png') }}">
@@ -17,7 +23,7 @@
 					<div class="col-md-12 main-perso-states-div">
 						<p>Niveau 1</p>
 						<p>Points d'honneur : </p>
-						<p>Expérience : {{ joueur.experience }}</p>
+						<p>Expérience :</p>
 						<div class="progress">
 						  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{ joueur.experience }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ joueur.experience }}%;">
 						    {{ joueur.experience }}%

@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+	<div class="col-md-12 map-main">
+		<div class="col-md-9 map-left">
+			{% if joueur.locate == 1 %}
+				<img class="illustration-var" src="{{ asset('img/maptravel1.jpg') }}">
+			{% elseif joueur.locate == 2 %}
+				<img class="illustration-var" src="{{ asset('img/maptravel2.jpg') }}">
+			{% elseif joueur.locate == 3 %}
+				<img class="illustration-var" src="{{ asset('img/maptravel3.jpg') }}">
+			{% endif %}
+		</div>
+		<div class="col-md-3 map-right">
+			<img class="illustration-var" src="{{ asset('img/texture.jpg') }}">
+			{% if joueur.locate == 1 %}
+				<div class="col-md-12 nav-text">
+	              <a href="{{ path('user_change_map', {'map': 2}) }}">Rejoindre les terres d'Exorine</a>
+	            </div>
+	            <div class="col-md-12 nav-text">
+	              <a href="{{ path('user_change_map', {'map': 3}) }}">Rejoindre les terres Rizzen</a>
+	            </div>
+			{% elseif joueur.locate == 2 %}
+				<div class="col-md-12 nav-text">
+	              <a href="{{ path('user_change_map', {'map': 1}) }}">Rejoindre les terres Thorkel</a>
+	            </div>
+	            <div class="col-md-12 nav-text">
+	              <a href="{{ path('user_change_map', {'map': 3}) }}">Rejoindre les terres Rizzen</a>
+	            </div>
+			{% elseif joueur.locate == 3 %}
+				<div class="col-md-12 nav-text">
+	              <a href="{{ path('user_change_map', {'map': 2}) }}">Rejoindre les terres d'Exorine</a>
+	            </div>
+	            <div class="col-md-12 nav-text">
+	              <a href="{{ path('user_change_map', {'map': 1}) }}">Rejoindre les terres Thorkel</a>
+	            </div>
+	        {% endif %}
+		</div>
+
+	</div>
+
+
+{% endblock %}

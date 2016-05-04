@@ -139,10 +139,10 @@ class RegistrationController extends Controller
             throw new AccessDeniedException('This user does not have access to this section.');
         }
 
-        return $this->render('houseBundle:frontend:dashboard.html.twig', array(
-            'user' => $user,
-            'targetUrl' => $this->getTargetUrlFromSession(),
-        ));
+        $url = $this->generateUrl('user_dashboard');
+        $response = new RedirectResponse($url);
+
+        return $response;
     }
 
     private function getTargetUrlFromSession()

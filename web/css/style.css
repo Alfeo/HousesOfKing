@@ -94,7 +94,7 @@
 	height:500px;
 }
 
-.main-perso
+.main
 {
 	min-height:570px;
 	background-color:#61210B;
@@ -113,6 +113,7 @@
 .main-perso-states
 {
 	margin-top:50px;
+	padding-top:10px;
 	height:300px;
 	text-align:center;
 }
@@ -203,6 +204,24 @@
 {
 	min-height:170px;
 	text-align:center;
+}
+
+.map-left
+{
+	height:470px;
+}
+
+.map-right
+{
+	height:470px;
+}
+
+.map-main
+{
+	min-height:470px;
+	background-color:#61210B;
+	padding:10px;
+	position:relative;
 }
 
 /* FOOTER */

@@ -70,6 +70,13 @@ class Datauser
      */
     private $gold;
 
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="locate", type="integer", nullable=true)
+     */
+    private $locate;
+
 
     /**
      * Get id
@@ -240,5 +247,28 @@ class Datauser
     public function getGold()
     {
         return $this->gold;
+    }
+
+    /**
+     * Set locate
+     *
+     * @param integer $locate
+     * @return Datauser
+     */
+    public function setLocate($locate)
+    {
+        $this->locate = $locate;
+
+        return $this;
+    }
+
+    /**
+     * Get locate
+     *
+     * @return integer 
+     */
+    public function getLocate()
+    {
+        return $this->locate;
     }
 }

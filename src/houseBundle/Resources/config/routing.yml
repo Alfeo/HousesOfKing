@@ -1,3 +1,11 @@
 user_dashboard:
-    path:     /user/character
+    path:     /character
     defaults: { _controller: houseBundle:Default:character }
+
+user_map:
+    path:     /map
+    defaults: { _controller: houseBundle:Default:map }
+
+user_change_map:
+    path:     /change/map/{map}
+    defaults: { _controller: houseBundle:Default:changeMap }

@@ -3,6 +3,10 @@
 namespace houseBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
 class DefaultController extends Controller
 {
@@ -15,6 +19,36 @@ class DefaultController extends Controller
     	$statistiques = $em->getRepository('houseBundle:Datauser')->findOneById($user->getId());
 
         return $this->render('houseBundle:frontend:character.html.twig', array(
+        	'joueur' => $statistiques,
+        ));
+    }
+
+    public function mapAction()
+    {
+    	$em = $this->getDoctrine()->getManager();
+
+    	$user = $this->container->get('security.context')->getToken()->getUser();
+
+    	$statistiques = $em->getRepository('houseBundle:Datauser')->findOneById($user->getId());
+
+        return $this->render('houseBundle:frontend:map.html.twig', array(
+        	'joueur' => $statistiques,
+        ));
+    }
+
+    public function changeMapAction(Request $request, $map)
+    {
+    	$em = $this->getDoctrine()->getManager();
+
+    	$user = $this->container->get('security.context')->getToken()->getUser();
+
+    	$statistiques = $em->getRepository('houseBundle:Datauser')->findOneById($user->getId());
+    	$statistiques->setLocate($map);
+    	
+    	$em->persist($statistiques);
+    	$em->flush();
+
+        return $this->render('houseBundle:frontend:map.html.twig', array(
         	'joueur' => $statistiques,
         ));
     }

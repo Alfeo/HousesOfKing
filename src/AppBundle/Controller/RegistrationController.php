@@ -22,6 +22,7 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use FOS\UserBundle\Model\UserInterface;
 use houseBundle\Entity\Datauser;
+use houseBundle\Entity\Logs;
 
 /**
  * Controller managing the registration
@@ -177,12 +178,24 @@ class RegistrationController extends Controller
 
         $faction = new Datauser();
         $faction->setHouse($thisHouse->getRefhouse());
+        $faction->setLocate($thisHouse->getRefhouse());
         $faction->setLife(100);
         $faction->setExperience(0);
+        $faction->setDefense(0);
         $faction->setStrenght(0);
         $faction->setGold(50);
+        $faction->setIduser($user->getId());
 
         $em->persist($faction);
+        $em->flush();
+
+        $log = new Logs();
+        $log->setIduser($user->getId());
+        $log->setText("Bienvenue ".$user->getUsername(). " !");
+        $log->setType(1);
+        $log->setIsGlobal(2);
+
+        $em->persist($log);
         $em->flush();
 
         $url = $this->generateUrl('user_confirmed');

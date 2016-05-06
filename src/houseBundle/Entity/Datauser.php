@@ -52,6 +52,13 @@ class Datauser
     /**
      * @var int
      *
+     * @ORM\Column(name="iduser", type="integer", nullable=true)
+     */
+    private $iduser;
+
+    /**
+     * @var int
+     *
      * @ORM\Column(name="life", type="integer", nullable=true)
      */
     private $life;
@@ -132,6 +139,29 @@ class Datauser
     public function getStuff()
     {
         return $this->stuff;
+    }
+
+    /**
+     * Set iduser
+     *
+     * @param integer $iduser
+     * @return Datauser
+     */
+    public function setIduser($iduser)
+    {
+        $this->iduser = $iduser;
+
+        return $this;
+    }
+
+    /**
+     * Get iduser
+     *
+     * @return integer 
+     */
+    public function getIduser()
+    {
+        return $this->iduser;
     }
 
     /**

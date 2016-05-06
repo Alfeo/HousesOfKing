@@ -16,10 +16,13 @@ class DefaultController extends Controller
 
     	$user = $this->container->get('security.context')->getToken()->getUser();
 
-    	$statistiques = $em->getRepository('houseBundle:Datauser')->findOneById($user->getId());
+    	$statistiques = $em->getRepository('houseBundle:Datauser')->findOneByIduser($user->getId());
+
+        $logs = $em->getRepository('houseBundle:Logs')->findByIduser($user->getId());
 
         return $this->render('houseBundle:frontend:character.html.twig', array(
         	'joueur' => $statistiques,
+            'logs' => $logs,
         ));
     }
 
@@ -29,7 +32,7 @@ class DefaultController extends Controller
 
     	$user = $this->container->get('security.context')->getToken()->getUser();
 
-    	$statistiques = $em->getRepository('houseBundle:Datauser')->findOneById($user->getId());
+    	$statistiques = $em->getRepository('houseBundle:Datauser')->findOneByIduser($user->getId());
 
         return $this->render('houseBundle:frontend:map.html.twig', array(
         	'joueur' => $statistiques,
@@ -42,8 +45,8 @@ class DefaultController extends Controller
 
     	$user = $this->container->get('security.context')->getToken()->getUser();
 
-    	$statistiques = $em->getRepository('houseBundle:Datauser')->findOneById($user->getId());
-    	$statistiques->setLocate($map);
+    	$statistiques = $em->getRepository('houseBundle:Datauser')->findOneByIduser($user->getId());
+        $statistiques->setLocate($map);
     	
     	$em->persist($statistiques);
     	$em->flush();

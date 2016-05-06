@@ -62,58 +62,71 @@
             </nav>
         </div>
 
-        <div class="col-md-2 col-md-offset-1 nav-left">
-          <img class="illustration-var" src="{{ asset('img/navleft.jpg') }}">
-          {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-            <div class="col-md-12 nav-text">
-              <a href="{{ path('user_map') }}">Carte du Royaume</a>
-            </div>
-            <div class="col-md-12 nav-text">
-              <a href="{{ path('user_locale_map') }}">Carte Locale</a>
-            </div>
+        <div class="col-md-2 col-md-offset-1">
+          <div class="col-md-12 nav-left">
+            <img class="illustration-var" src="{{ asset('img/navleft.jpg') }}">
+            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+              <div class="col-md-12 nav-text">
+                <a href="{{ path('user_map') }}">Carte du Royaume</a>
+              </div>
+              <div class="col-md-12 nav-text">
+                <a href="{{ path('user_locale_map') }}">Carte Locale</a>
+              </div>
 
-            <div class="col-md-12">
-              <hr>
-            </div>
+              <div class="col-md-12">
+                <hr>
+              </div>
 
-            <div class="col-md-12 nav-text">
-              <a href="#">Atelier</a>
-            </div>
-            <div class="col-md-12 nav-text">
-              <a href="#">Boutique locale</a>
-            </div>
-            <div class="col-md-12 nav-text">
-              <a href="#">Commerce</a>
-            </div>
+              <div class="col-md-12 nav-text">
+                <a href="#">Atelier</a>
+              </div>
+              <div class="col-md-12 nav-text">
+                <a href="#">Boutique locale</a>
+              </div>
+              <div class="col-md-12 nav-text">
+                <a href="#">Commerce</a>
+              </div>
 
-            <div class="col-md-12">
-              <hr>
-            </div>
+              <div class="col-md-12">
+                <hr>
+              </div>
 
-            <div class="col-md-12 nav-text">
-              <a href="#">Ma Faction</a>
-            </div>
-            <div class="col-md-12 nav-text">
-              <a href="#">Alliance</a>
-            </div>
+              <div class="col-md-12 nav-text">
+                <a href="#">Ma Faction</a>
+              </div>
+              <div class="col-md-12 nav-text">
+                <a href="#">Alliance</a>
+              </div>
 
-            <div class="col-md-12">
-              <hr>
-            </div>
+              <div class="col-md-12">
+                <hr>
+              </div>
 
-            <div class="col-md-12 nav-text-alt">
-              <a href="#">Gestion du Royaume</a>
-            </div>
-            <div class="col-md-12 nav-text-alt">
-              <a href="#">Gestion de la Maison</a>
-            </div>
-          {% else %}
-          {% endif %}
-          
+              <div class="col-md-12 nav-text-alt">
+                <a href="#">Gestion du Royaume</a>
+              </div>
+              <div class="col-md-12 nav-text-alt">
+                <a href="#">Gestion de la Maison</a>
+              </div>
+            {% else %}
+            {% endif %}
+          </div>
+
+          <div class="col-md-12 main-activite
+">
+            {% block activite %}{% endblock %}
+          </div>
         </div>
+
+        
 
         <div class="col-md-8">
           {% block body %}{% endblock %}
+        </div>
+
+        <div class="col-md-10 col-md-offset-1 main-activite-extend
+">
+          {% block extend %}{% endblock %}
         </div>
 
         <div class="empty-div col-md-12">

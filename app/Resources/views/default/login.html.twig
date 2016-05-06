@@ -2,6 +2,32 @@
 
 {% trans_default_domain 'FOSUserBundle' %}
 
+{% block activite %}
+
+	<style>
+		
+		.main-activite
+		{
+			display:none;
+		}
+
+	</style>
+
+{% endblock %}
+
+{% block extend %}
+
+	<style>
+		
+		.main-activite-extend
+		{
+			display:none;
+		}
+
+	</style>
+
+{% endblock %}
+
 {% block body %}
 {% if error %}
     <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>

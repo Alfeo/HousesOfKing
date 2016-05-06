@@ -6,7 +6,8 @@ app:
     resource: "@AppBundle/Controller/"
     type:     annotation
 
-# app/config/routing.yml
+# USER #
+
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
 
@@ -33,3 +34,9 @@ user_choice_house_confirmed:
 user_confirmed:
     path:     /user/confirmed
     defaults: { _controller: AppBundle:Registration:confirmed }
+
+# ADMIN #
+
+admin_reset_house:
+    path:     /admin/reset/house
+    defaults: { _controller: AppBundle:Default:resetHouse }

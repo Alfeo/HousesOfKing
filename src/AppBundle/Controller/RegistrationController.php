@@ -23,6 +23,7 @@ use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use FOS\UserBundle\Model\UserInterface;
 use houseBundle\Entity\Datauser;
 use houseBundle\Entity\Logs;
+use \DateTime;
 
 /**
  * Controller managing the registration
@@ -177,6 +178,7 @@ class RegistrationController extends Controller
         $thisHouse = $em->getRepository('houseBundle:House')->findOneByName($house);
 
         $faction = new Datauser();
+        $faction->setPseudo($user->getUsername());
         $faction->setHouse($thisHouse->getRefhouse());
         $faction->setLocate($thisHouse->getRefhouse());
         $faction->setLife(100);
@@ -194,6 +196,7 @@ class RegistrationController extends Controller
         $log->setText("Bienvenue ".$user->getUsername(). " !");
         $log->setType(1);
         $log->setIsGlobal(2);
+        $log->setCreatedAt(new \DateTime());
 
         $em->persist($log);
         $em->flush();

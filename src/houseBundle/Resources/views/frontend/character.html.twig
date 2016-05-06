@@ -4,11 +4,11 @@
 
 	{% for log in logs %}
 		{% if log.type == 1 %}
-			<p style="color:blue">[{{ log.createdAt }}] {{ log.text }}</p>
+			<p style="color:#00BFFF">[{{ log.createdAt|date("H:i:s") }}] {{ log.text }}</p>
 		{% elseif log.type == 2 %}
-			<p style="color:green">[{{ log.createdAt }}] {{ log.text }}</p>
+			<p style="color:#01DF3A">[{{ log.createdAt|date("H:i:s") }}] {{ log.text }}</p>
 		{% elseif log.type == 3 %}
-			<p style="color:red">[{{ log.createdAt }}] {{ log.text }}</p>
+			<p style="color:#FA5858">[{{ log.createdAt|date("H:i:s") }}] {{ log.text }}</p>
 		{% endif %}
 	{% endfor %}
 

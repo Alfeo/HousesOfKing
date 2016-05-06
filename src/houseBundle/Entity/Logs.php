@@ -24,7 +24,7 @@ class Logs
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="createdAt", type="date", nullable=true)
+     * @ORM\Column(name="createdAt", type="datetime")
      */
     private $createdAt;
 
@@ -71,6 +71,7 @@ class Logs
      * Set createdAt
      *
      * @param \DateTime $createdAt
+     *
      * @return Logs
      */
     public function setCreatedAt($createdAt)
@@ -83,7 +84,7 @@ class Logs
     /**
      * Get createdAt
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getCreatedAt()
     {

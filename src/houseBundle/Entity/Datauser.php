@@ -84,6 +84,13 @@ class Datauser
      */
     private $locate;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="pseudo", type="text", nullable=true)
+     */
+    private $pseudo;
+
 
     /**
      * Get id
@@ -300,5 +307,28 @@ class Datauser
     public function getLocate()
     {
         return $this->locate;
+    }
+
+    /**
+     * Set pseudo
+     *
+     * @param string $pseudo
+     * @return Datauser
+     */
+    public function setPseudo($pseudo)
+    {
+        $this->pseudo = $pseudo;
+
+        return $this;
+    }
+
+    /**
+     * Get pseudo
+     *
+     * @return string 
+     */
+    public function getPseudo()
+    {
+        return $this->pseudo;
     }
 }

@@ -62,7 +62,7 @@ class DefaultController extends Controller
 
     	$user = $this->container->get('security.context')->getToken()->getUser();
 
-    	$currentPos = $em->getRepository('houseBundle:Datauser')->findOneById($user->getId());
+    	$currentPos = $em->getRepository('houseBundle:Datauser')->findOneByIduser($user->getId());
     	$allUserLocale = $em->getRepository('houseBundle:Datauser')->findByLocate($currentPos->getLocate());
 
         return $this->render('houseBundle:frontend:maplocale.html.twig', array(

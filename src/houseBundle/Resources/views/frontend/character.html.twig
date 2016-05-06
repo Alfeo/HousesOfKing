@@ -110,7 +110,12 @@
 
 	<div class="col-md-12 main-perso-inventaire">
 		<img class="illustration-var" src="{{ asset('img/texture.jpg') }}">
-		
+		{% for item in items %}
+			<div class="col-md-1 col-xs-2 inventaire-item">
+				<img class="illustration-var" src="{{ asset('img/'~ item.NameImg ~'.jpg' ) }}">
+				<p class="inventaire-item-text">{{ item.Amount }}</p>
+			</div>
+		{% endfor %}
 	</div>
 
 

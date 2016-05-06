@@ -6,6 +6,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use houseBundle\Entity\House;
+use houseBundle\Entity\Item;
 
 class DefaultController extends Controller
 {
@@ -48,6 +49,28 @@ class DefaultController extends Controller
         $em->persist($house1);
         $em->persist($house2);
         $em->persist($house3);
+        $em->flush();
+
+        return $this->render('default/index.html.twig', array(
+            'base_dir' => realpath($this->container->getParameter('kernel.root_dir').'/..'),
+        ));
+    }
+
+    public function resetItemAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $item1 = new Item();
+        $item1->setName("Potion de vie");
+        $item1->setType(1);
+        $item1->setIditem(1);
+        $item1->setMoreLife(100);
+        $item1->setMoreDefense(0);
+        $item1->setMoreStrenght(0);
+        $item1->setNameImg("item1.jpg");
+        $item1->setValue(5);
+
+        $em->persist($item1);
         $em->flush();
 
         return $this->render('default/index.html.twig', array(

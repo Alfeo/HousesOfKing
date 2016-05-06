@@ -190,6 +190,23 @@
 	text-align:center;
 }
 
+.inventaire-item
+{
+	margin-top:10px;
+	height:65px;
+	border:solid black 1px;
+	position:relative;
+}
+
+.inventaire-item-text
+{
+	position:absolute;
+	font-size:20px;
+	top:0%;
+	right:0%;
+	color:yellow;
+}
+
 .faction-div
 {
 	min-height:400px;

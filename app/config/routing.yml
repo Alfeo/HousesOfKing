@@ -40,3 +40,7 @@ user_confirmed:
 admin_reset_house:
     path:     /admin/reset/house
     defaults: { _controller: AppBundle:Default:resetHouse }
+
+admin_reset_item:
+    path:     /admin/reset/item
+    defaults: { _controller: AppBundle:Default:resetItem }

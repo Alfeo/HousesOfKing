@@ -17,12 +17,26 @@ class DefaultController extends Controller
     	$user = $this->container->get('security.context')->getToken()->getUser();
 
     	$statistiques = $em->getRepository('houseBundle:Datauser')->findOneByIduser($user->getId());
+        
+        $stuff = [];
+        $items = $em->getRepository('houseBundle:Inventaire')->findByIduser($user->getId());
+        foreach ($items as $item)
+        {
+            $thisItem = $em->getRepository('houseBundle:Item')->findOneByIditem($item->getItem());
+            $stuff[] = array(
+                'NameImg' => $thisItem->getNameImg(),
+                'Amount' => $item->getAmount(),
+            );
+        }
+
+        // var_dump($stuff);exit;
 
         $logs = $em->getRepository('houseBundle:Logs')->findByIduser($user->getId());
 
         return $this->render('houseBundle:frontend:character.html.twig', array(
         	'joueur' => $statistiques,
             'logs' => $logs,
+            'items' => $stuff,
         ));
     }
 

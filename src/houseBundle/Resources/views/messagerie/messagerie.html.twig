@@ -1,0 +1,94 @@
+{% extends 'base.html.twig' %}
+
+{% block activite %}
+	<style>
+		
+		.main-activite-extend
+		{
+			display:none;
+		}
+
+	</style>
+{% endblock %}
+
+
+{% block body %}
+
+	<div class="col-md-12 main-perso-inventaire-text">
+		<h2 class="pull-left">Messagerie</h2>
+	</div>
+
+	<div class="col-md-12">
+		<hr>
+	</div>
+
+	<div class="col-md-12 msg-sign">
+		<img class="illustration-var" src="{{ asset('img/texture.jpg') }}">
+		<div class="col-md-12 map-locale-main">
+			{% for msg in receives %}
+				<div class="col-md-12 col-xs-12 messagerie-player">
+					<div class="col-md-offset-1 col-md-1 col-xs-offset-1 col-xs-2 map-locale-player-acatar">
+						<img class="illustration-var" src="{{ asset('img/default.png') }}">
+					</div>
+					<div class="col-md-10 col-xs-7 map-locale-player-text">
+						<div class="col-md-4 col-xs-8 messagerie-auteur">
+							<p>{{ msg['auteur'] }}</p> 
+						</div>
+						<div class="col-md-4 col-xs-4">
+							<button type="button" class="lecture btn btn-info">Lire</button>
+						</div>
+					</div>
+					<div class="col-md-12 col-xs-12 messagerie-content">
+						{{ msg['message'] }}
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+
+	<div class="col-md-12 main-perso-inventaire-text">
+		<h2 class="pull-left">Nouveau Message</h2>
+	</div>
+
+	<div class="col-md-12">
+		<hr>
+	</div>
+
+	<form method="POST" action="{{ path('user_new_msg') }}">
+
+	<div class="col-md-8 message-box">
+		<img class="illustration-var" src="{{ asset('img/navleft.jpg') }}">
+		<div class="col-md-12 message-dest">
+			<input type="text" name="destinataire">
+		</div>
+
+		<div class="col-md-12 message-content">
+			<textarea name="message"></textarea>
+		</div>
+	</div>
+
+	<div class="col-md-3 col-md-offset-1 avatar-box">
+		<img class="illustration-var" src="{{ asset('img/texture.jpg') }}">
+		<div class="col-md-12 avatar-content col-xs-6">
+			<img class="illustration-var" src="{{ asset('img/default.png') }}">
+		</div>
+
+		<div class="col-md-12 col-xs-6 king-but">
+			<input class="btn btn-success col-md-12" type="submit" value="Envoyer">
+		</div>
+	</div>
+
+<script>
+
+$(document).ready(function()
+{
+	$(".lecture").click(function() 
+	{
+		var parent = $(this).parents(".messagerie-player");
+		$(parent).find(".messagerie-content").css("display", "block");
+	});
+});
+
+</script>
+
+{% endblock %}

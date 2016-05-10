@@ -13,3 +13,11 @@ user_change_map:
 user_locale_map:
     path:     /locale/map
     defaults: { _controller: houseBundle:Default:localeMap }
+
+user_messagerie:
+    path:     /messagerie
+    defaults: { _controller: houseBundle:Messagerie:index }
+
+user_new_msg:
+    path:     /messagerie/new
+    defaults: { _controller: houseBundle:Messagerie:newMsg }

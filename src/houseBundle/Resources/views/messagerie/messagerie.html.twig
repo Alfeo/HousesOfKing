@@ -14,6 +14,14 @@
 
 {% block body %}
 
+	{% for label, flashes in app.session.flashbag.all %}
+	    {% for flash in flashes %}
+	        <div class="alert alert-{{ label }}">
+	            {{ flash }}
+	        </div>
+	    {% endfor %}
+	{% endfor %}
+	
 	<div class="col-md-12 main-perso-inventaire-text">
 		<h2 class="pull-left">Messagerie</h2>
 	</div>
@@ -35,7 +43,16 @@
 							<p>{{ msg['auteur'] }}</p> 
 						</div>
 						<div class="col-md-4 col-xs-4">
-							<button type="button" class="lecture btn btn-info">Lire</button>
+							<div class="col-md-6 col-xs-6">
+								<button type="button" class="lecture btn btn-info">Lire</button>
+							</div>
+
+							<div class="col-md-6 col-xs-6">
+								<form method="POST" action="{{ path('user_delete_msg') }}">
+									<input type="hidden" name="deleteid" value="{{ msg['id'] }}">
+									<input type="submit" class="btn btn-danger" value="Supprimer">
+								</form>
+							</div>
 						</div>
 					</div>
 					<div class="col-md-12 col-xs-12 messagerie-content">
@@ -84,8 +101,18 @@ $(document).ready(function()
 {
 	$(".lecture").click(function() 
 	{
-		var parent = $(this).parents(".messagerie-player");
-		$(parent).find(".messagerie-content").css("display", "block");
+		if ($(this).hasClass("open"))
+		{
+			$(this).removeClass("open");
+			var parent = $(this).parents(".messagerie-player");
+			$(parent).find(".messagerie-content").css("display", "none");
+		}
+		else
+		{
+			$(this).addClass("open");
+			var parent = $(this).parents(".messagerie-player");
+			$(parent).find(".messagerie-content").css("display", "block");
+		}
 	});
 });
 

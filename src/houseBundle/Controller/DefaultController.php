@@ -65,6 +65,11 @@ class DefaultController extends Controller
     	$em->persist($statistiques);
     	$em->flush();
 
+        $request->getSession()
+        ->getFlashBag()
+        ->add('success', 'Nouvelle Location !')
+    ;
+
         return $this->render('houseBundle:frontend:map.html.twig', array(
         	'joueur' => $statistiques
         ));

@@ -21,3 +21,7 @@ user_messagerie:
 user_new_msg:
     path:     /messagerie/new
     defaults: { _controller: houseBundle:Messagerie:newMsg }
+
+user_delete_msg:
+    path:     /messagerie/delete
+    defaults: { _controller: houseBundle:Messagerie:deleteMsg }

@@ -14,6 +14,14 @@
 
 {% block body %}
 
+	{% if app.session.flashBag.has('success') %}
+        <div class="alert alert-success col-md-12">
+            {% for msg in app.session.flashBag.get('success') %}
+                {{ msg }}
+            {% endfor %}
+        </div>
+    {% endif %}
+
 	<div class="col-md-12 map-main">
 		<div class="col-md-9 map-left">
 			{% if joueur.locate == 1 %}
